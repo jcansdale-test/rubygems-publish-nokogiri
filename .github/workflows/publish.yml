@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir lib
           cat > lib/${{ env.NAME }}.rb << EOM
+          require 'nokogiri'
           class RubyGemsPublish
             def self.hello
               puts "Hello from ${{ github.repository }}!"
