@@ -47,8 +47,6 @@ jobs:
               s.add_runtime_dependency 'nokogiri'
           end
           EOM
-        env:
-          VERSION: "${{ env.VERSION }}-ruby27"
 
       - name: Add Gemfile
         run: |
