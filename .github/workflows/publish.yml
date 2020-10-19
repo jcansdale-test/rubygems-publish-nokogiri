@@ -44,6 +44,7 @@ jobs:
               s.authors     = ["Jamie Cansdale"]
               s.licenses    = ['MIT']
               s.homepage    = 'https://github.com/${{ github.repository }}'
+              s.add_runtime_dependency 'nokogiri'
           end
           EOM
         env:
@@ -53,7 +54,8 @@ jobs:
         run: |
           cat > Gemfile << EOM
           source "https://rubygems.org/"
-          gem "nokogiri"
+          # Specify your gem's dependencies in foodie.gemspec
+          gemspec
           EOM
 
       - name: Build .gem
